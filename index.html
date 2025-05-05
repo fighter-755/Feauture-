@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Samsung Style Tabs with Live Clock</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      margin: 20px;
+    }
+    .tab {
+      position: relative;
+      background: white;
+      border-left: 5px solid #4caf50;
+      padding: 15px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+    .title {
+      font-weight: bold;
+    }
+    .subtitle {
+      font-size: 0.9em;
+      color: gray;
+    }
+    .time {
+      float: right;
+      color: gray;
+      font-size: 0.85em;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: rgba(0, 100, 0, 0.6);
+      z-index: 1;
+      transition: width 2s linear;
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+    }
+    .contact-icons {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .contact-icons a {
+      text-decoration: none;
+      display: inline-block;
+      margin: 8px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      color: white;
+      font-size: 22px;
+      line-height: 45px;
+      transition: 0.3s;
+      background: none; /* Background color removed */
+    }
+    .contact-icons a:hover {
+      transform: scale(1.1);
+    }
+    .whatsapp { background: none; }
+    .facebook { background: none; }
+    .telegram { background: none; }
+    .instagram { background: none; }
+    
+    shayari-box {
+      margin-top: 40px;
+      background: #fff5f8;
+      padding: 15px;
+      border-left: 6px solid #ff4d6d;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      font-style: italic;
+      color: #cc0044;
+      text-align: center;
+      font-size: 16px;
+      transition: all 0.3s ease-in-out;
+    }
+  </style>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Tabs -->
+<div class="tab" onclick="startFullLoading(this, 'fi2.bot-hosting.net:20424/login')">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">Sarver ofline<span class="time"></span></div>
+    <div class="subtitle">Activeted "running "</div>
+  </div>
+</div>
+
+<div class="tab" onclick="startFullLoading(this, 'https://fighter-755.github.io/Image-genrate-/')">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">Image genrate  <span class="time"></span></div>
+    <div class="subtitle">Successfully installed.</div>
+  </div>
+</div>
+
+<div class="tab" onclick="startFullLoading(this, 'https://www.mediafire.com/file/0o8368s0f2ngr5e/Temp+Number+Receive+Code_1.4.apk/file')">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">Tamp numbers<span class="time"></span></div>
+    <div class="subtitle">Successfully installed.</div>
+  </div>
+</div>
+
+<div class="tab" onclick="startFullLoading(this, 'https://www.mediafire.com/file/6mbkbcuibb2g1cv/%25E1%25B4%2584%25CA%258F%25CA%2599%25E1%25B4%2587%25CA%2580-x_1.0.apk/file')">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">Android Hack<span class="time"></span></div>
+    <div class="subtitle">education purpose </div>
+  </div>
+</div>
+
+<div class="tab" onclick="startFullLoading(this, 'https://example.com/5')">
+  <div class="overlay"></div>
+  <div class="content">
+    <div class="title">Samsung Internet <span class="time"></span></div>
+    <div class="subtitle">Installation pending</div>
+  </div>
+</div>
+
+<!-- Contact Icons -->
+<div class="contact-icons">
+  <a href="https://wa.me/+917318018572" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=61571356942900" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://t.me/hackingujdj" class="telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+  <a href="https://www.instagram.com/_broken_heart755?igsh=am9xdHBuMWFiNGJp" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
+<div class="shayari-box">
+      <p id="shayariText"></p>
+    </div>
+  </div>
+
+<script>
+  function updateClocks() {
+    const times = document.querySelectorAll('.time');
+    const now = new Date();
+    let hours = now.getHours();
+    const minutes = now.getMinutes();
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+    const formattedTime = `${hours}:${minutes.toString().padStart(2, '0')} ${ampm}`;
+    times.forEach(t => t.textContent = formattedTime);
+  }
+  setInterval(updateClocks, 1000);
+  updateClocks();
+
+  function startFullLoading(tab, url) {
+    if (tab.classList.contains('loading')) return;
+    tab.classList.add('loading');
+
+    const overlay = tab.querySelector('.overlay');
+    overlay.style.width = '100%';
+
+    setTimeout(() => {
+      overlay.style.width = '0%';
+      tab.classList.remove('loading');
+      window.open(url, '_blank');
+    }, 2000);
+  }
+  
+  const shayariList = [
+"दिलों में मोहब्बत के जज़्बात रह गए...",
+      "तेरा नाम लूँ जुबां से, ये इजाजत नहीं मुझे...",
+      "हम तो नादान थे जो मोहब्बत को खेल समझ बैठे...",
+      "कुछ तो रहम कर ऐ ज़िंदगी...",
+      "ना जाने कौन सी बात पर रूठे हो तुम...",
+      "मुस्कराने की आदत भी कितनी महंगी पड़ी...",
+      "कभी-कभी हम किसी के लिए इतना जरूरी भी नहीं होते...",
+      "तेरा ख्याल भी तेरी तरह दिल से जाता ही नहीं...",
+      "वो जो रिश्ता था, अब अल्फ़ाज़ों में भी नहीं रहा...",
+      "हम भी मुस्कुरा देते अगर दिल ना दुखा होता...",
+      "तन्हा रहना सीख लिया है हमने...",
+      "तेरी यादें ही अब मेरी सबसे बड़ी सच्चाई हैं...",
+      "हर पल तुझे सोचते रहना, अब आदत बन गई है...",
+      "काश तुम समझ पाते मेरे जज़्बात को...",
+      "वो मुझसे दूर क्या हुआ, मैं खुद से ही दूर हो गया...",
+      "ना जाने कितनी बार खुद को टूटते देखा है...",
+      "इश्क़ करने की इजाजत नहीं मिलती यहाँ...",
+      "तेरी मोहब्बत में बिखर गया हूं मैं...",
+      "जबसे तुम दूर हुए, सुकून सा नहीं आता...",
+      "तेरे बिना जीना मुश्किल नहीं, नामुमकिन है...",
+      "हमने चाहा भी तो तुझे भूल नहीं पाए...",
+      "तेरे बिना कुछ अधूरा सा लगता है...",
+      "इश्क़ अधूरा ही अच्छा लगता है...",
+      "तेरी मुस्कान ही तो मेरी जान है...",
+      "वो बातें जो तुझसे जुड़ी थीं, अब खामोशियों में बसी हैं...",
+      "हर एक साँस में तेरा नाम है...",
+      "तू जो पास नहीं, फिर भी एहसास है तेरा...",
+      "तेरा इंतज़ार ही अब मेरी आदत बन गई है...",
+      "जिसे हम खो न सके, वही सबसे गहरा प्यार होता है...",
+      "रिश्ते दिल से बनते हैं, बातों से नहीं..."
+    ];
+
+    let index = 0;
+    const shayariText = document.getElementById("shayariText");
+
+    function showShayari() {
+      shayariText.innerText = shayariList[index];
+      index = (index + 1) % shayariList.length;
+    }
+
+    setInterval(showShayari, 5000); // Show every 5 seconds
+    showShayari(); // Initial
+</script>
+
+</body>
+</html>
