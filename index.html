@@ -83,6 +83,25 @@
       font-size: 16px;
       transition: all 0.3s ease-in-out;
     }
+
+      status-button {
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+
+    .status-button:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .active { background-color: #28a745; }     /* Green */
+    .inactive { background-color: #6c757d; }   /* Gray */          
   </style>
 
   <!-- Font Awesome for icons -->
@@ -142,6 +161,8 @@
       <p id="shayariText"></p>
     </div>
   </div>
+
+  <a href="fi2.bot-hosting.net:20424/login" class="status-button inactive">Inactive</a>
 
 <script>
   function updateClocks() {
